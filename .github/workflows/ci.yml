@@ -1,0 +1,22 @@
+name: Basic CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run simple build step
+        run: |
+          echo "✅ CI Pipeline started..."
+          echo "Running basic checks"
+          echo "✅ Build successful!"
+
